@@ -17,8 +17,8 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 public class Account implements Serializable{
     @Id
-    private Long id;
-    private Float balance;
+    private long id;
+    private float balance;
     
     @ManyToOne
     @JoinColumn(name = "branch_id")
@@ -31,16 +31,16 @@ public class Account implements Serializable{
     public Account() {
     	
     }
-    public Account(Long id) {
+    public Account(long id) {
 		this.id = id;
 	}
     
-    public Account(Float balance, Branch branch) {
+    public Account(float balance, Branch branch) {
     	this.setBalance(balance);
     	this.setBranch(branch);
     }
     
-    public Account(long id, Float balance, Branch branch) {
+    public Account(long id, float balance, Branch branch) {
     	this.setId(id);
     	this.setBalance(balance);
     	this.setBranch(branch);
@@ -48,7 +48,7 @@ public class Account implements Serializable{
 	public Long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 	public float getBalance() {

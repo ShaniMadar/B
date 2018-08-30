@@ -102,7 +102,7 @@ public class BranchResource {
 	}
     
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    public String deleteBranch(@RequestParam("id") Long id) {
+    public String deleteBranch(@RequestParam("id") long id) {
     	logger.info("Delete branch request for branch id: "+ id);
     	logger.warn("Deleting Branch and its refferenced children");
     	if(!validator.isExist(id)) {
@@ -117,7 +117,7 @@ public class BranchResource {
     }
     
     @RequestMapping(value = "/deleteByBankId", method = RequestMethod.POST)
-    public String deleteBranchByBankId(@RequestParam("bank_id") Long id) {
+    public String deleteBranchByBankId(@RequestParam("bank_id") long id) {
     	logger.info("Deleting branches by bank id: "+ id);
     	logger.warn("This action will delete all branches reffered to the bank id " + id + " and their refferenced children");
     	if(!validator.isParentExist(id)) {

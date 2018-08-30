@@ -115,7 +115,7 @@ public class CustomerResource {
 	}
     
     @PostMapping(value = "/delete")
-    public String deleteCustomer(@RequestParam("id") Long id) {
+    public String deleteCustomer(@RequestParam("id") long id) {
     	logger.info("Delete Customer request for Customer id: "+ id);
     	logger.warn("Deleting Customer and its refferenced children");
     	if(!validator.isExist(id)) {

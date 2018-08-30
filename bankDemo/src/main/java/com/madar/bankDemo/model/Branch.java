@@ -19,7 +19,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Table(name = "BRANCH")
 public class Branch implements Serializable{
     @Id
-    private Long id;
+    private long id;
     private String adress;
     
     @ManyToOne
@@ -44,7 +44,7 @@ public class Branch implements Serializable{
 	public Long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 	public String getAdress() {

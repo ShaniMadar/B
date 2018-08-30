@@ -48,7 +48,7 @@ public class BankResource {
     }
     
     @PostMapping(value = "/add")
-    public Bank addNewBank(@RequestParam("id") Long id){
+    public Bank addNewBank(@RequestParam("id") long id){
     	logger.info("Add new bank request.");
     	if(bankRep.existsById(id)) {
     		logger.warn("Bank Already Exists For this Id: " + id);
@@ -64,7 +64,7 @@ public class BankResource {
     }
     
     @PostMapping(value = "/delete")
-    public String deleteBank(@RequestParam("id") Long id) {
+    public String deleteBank(@RequestParam("id") long id) {
     	logger.info("Delete bank request.");
     	if(!branchRep.findBranchByBankId(id).isEmpty()) {
     		logger.warn("This bank has branches, therefor it was not deleted.");
@@ -80,7 +80,7 @@ public class BankResource {
     }
     
     @PostMapping(value = "/deleteCascade")
-    public String deleteBankCascade(@RequestParam("id") Long id) {
+    public String deleteBankCascade(@RequestParam("id") long id) {
     	logger.info("Delete bank request.");
         bankRep.deleteById(id);
         if(bankRep.existsById(id)) {
@@ -92,7 +92,7 @@ public class BankResource {
     }
     
     @PostMapping(value = "/update")
-    public Bank updateBank(@RequestParam("id") Long id) {
+    public Bank updateBank(@RequestParam("id") long id) {
     	//Bank has no parameters to update.
     	logger.info("Update Bank Request.");
         if(!bankRep.existsById(id)) {
