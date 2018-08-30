@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.madar.bankDemo.cacheInterface.AccountCacheInterface;
@@ -50,7 +49,6 @@ public class AccountResource {
     }
     
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    @ResponseBody
     public Account addNewAccount(
     		@RequestParam("id") long id,
     		@RequestParam("balance") float balance,
@@ -74,7 +72,6 @@ public class AccountResource {
     }
     
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    @ResponseBody
     public Account updateAccount(
     		@RequestParam("id") long id,
     		@RequestParam("balance") float balance,
@@ -98,7 +95,6 @@ public class AccountResource {
     }
     
     @RequestMapping(value = "/searchByBranchId", method = RequestMethod.POST)
-    @ResponseBody
     public List<Account> getAccountsByBranchId(
     		@RequestParam("branch_id") long branch_id){
     	logger.info("Searching account by branch id: "+ branch_id);
@@ -106,7 +102,6 @@ public class AccountResource {
 	}
     
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    @ResponseBody
     public String deleteAccount(@RequestParam("id") Long id) {
     	logger.info("Delete account request for account id: "+ id);
     	logger.warn("Deleting account and its refferenced children");
@@ -122,7 +117,6 @@ public class AccountResource {
     }
     
     @RequestMapping(value = "/deleteByBranchId", method = RequestMethod.POST)
-    @ResponseBody
     public String deleteAccountByBranchId(@RequestParam("branch_id") Long id) {
     	logger.info("Deleting accounts by branch id: "+ id);
     	logger.warn("This action will delete all accounts reffered to the branch id " + id + " and their refferenced children");
