@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.madar.bankDemo.cacheInterface.BranchCacheInterface;
@@ -50,7 +49,6 @@ public class BranchResource {
     }
     
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    @ResponseBody
     public Branch addNewBranch(
     		@RequestParam("id") long id,
     		@RequestParam("adress") String adress,
@@ -74,7 +72,6 @@ public class BranchResource {
     }
     
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    @ResponseBody
     public Branch updateBranch(
     		@RequestParam("id") long id,
     		@RequestParam("adress") String adress,
@@ -98,7 +95,6 @@ public class BranchResource {
     }
     
     @RequestMapping(value = "/searchByBankId", method = RequestMethod.POST)
-    @ResponseBody
     public List<Branch> getBranchByBankId(
     		@RequestParam("bank_id") long bank_id){
     	logger.info("Searching branch by bank id: "+ bank_id);
@@ -106,7 +102,6 @@ public class BranchResource {
 	}
     
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    @ResponseBody
     public String deleteBranch(@RequestParam("id") Long id) {
     	logger.info("Delete branch request for branch id: "+ id);
     	logger.warn("Deleting Branch and its refferenced children");
@@ -122,7 +117,6 @@ public class BranchResource {
     }
     
     @RequestMapping(value = "/deleteByBankId", method = RequestMethod.POST)
-    @ResponseBody
     public String deleteBranchByBankId(@RequestParam("bank_id") Long id) {
     	logger.info("Deleting branches by bank id: "+ id);
     	logger.warn("This action will delete all branches reffered to the bank id " + id + " and their refferenced children");
