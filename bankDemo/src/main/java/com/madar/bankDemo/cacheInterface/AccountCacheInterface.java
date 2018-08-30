@@ -8,4 +8,5 @@ import com.madar.bankDemo.model.Account;
 public interface AccountCacheInterface {
 	Account getAccount(long id);
 	Account save(Account account, long id);
+	void delete(long id);
 }

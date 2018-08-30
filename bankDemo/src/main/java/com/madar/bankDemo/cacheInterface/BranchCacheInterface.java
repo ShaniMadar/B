@@ -8,4 +8,5 @@ import com.madar.bankDemo.model.Branch;
 public interface BranchCacheInterface {
 	Branch getBranch(long id);
 	Branch save(Branch branch, long id);
+	void delete(long id);
 }

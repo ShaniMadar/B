@@ -109,7 +109,7 @@ public class AccountResource {
     		logger.warn("No existing account for id: "+ id+ " delete operation failed");
     		return "No existing account for id: " + id;
     	}
-        accountRep.deleteById(id);
+    	accountCache.delete(id);
         if(accountRep.existsById(id)) {
         	return "Error - Account Was not deleted";
         }

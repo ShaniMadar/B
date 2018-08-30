@@ -8,4 +8,5 @@ import com.madar.bankDemo.model.Customer;
 public interface CustomerCacheInterface {
 	Customer getCustomer(long id);
 	Customer save(Customer customer, long id);
+	void delete(long id);
 }

@@ -122,7 +122,7 @@ public class CustomerResource {
     		logger.warn("No existing customer for id: "+ id+ " delete operation failed");
     		return "No existing customer for id: " + id;
     	}
-    	customerRep.deleteById(id);
+    	customerCache.delete(id);
         if(customerRep.existsById(id)) {
         	return "Error - Customer Was not deleted";
         }

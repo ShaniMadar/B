@@ -109,7 +109,7 @@ public class BranchResource {
     		logger.warn("No existing branch for id: "+ id+ " delete operation failed");
     		return "No existing branch for id: " + id;
     	}
-        branchRep.deleteById(id);
+    	branchCache.delete(id);
         if(branchRep.existsById(id)) {
         	return "Error - Branch Was not deleted";
         }
